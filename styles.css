@@ -39,7 +39,7 @@ body {
 
 #keyboard:hover {
     cursor: pointer;  
-    border: 2px solid black;
+    
 }
 
 #keyboard:click {
@@ -54,8 +54,6 @@ body {
     padding-right: 10px;
 }
 
-#leftPanel img {
-}
 
 #leftPanel .upgrade {
     margin-top: 20px;
@@ -63,4 +61,17 @@ body {
     width: 90%;
     border: 2px solid white;
     display: list-item;
+    list-style: none;
+}
+
+#leftPanel .upgrade:hover {
+    border: 3px solid yellow;
+}
+
+#leftPanel .upgrade p {
+    width: 150px;
+    margin-top: 10px;
+    margin-right: 20px;
+    color: white;
+    float: right;
 }
