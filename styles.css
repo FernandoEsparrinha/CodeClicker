@@ -59,19 +59,38 @@ body {
     margin-top: 20px;
     margin-bottom: 20px;
     width: 90%;
-    border: 2px solid white;
     display: list-item;
     list-style: none;
-}
-
-#leftPanel .upgrade:hover {
-    border: 3px solid yellow;
 }
 
 #leftPanel .upgrade p {
     width: 150px;
     margin-top: 10px;
     margin-right: 20px;
-    color: white;
     float: right;
+}
+
+#leftPanel .disabled {
+    border: 2px solid gray;
+    background-color: gray;
+}
+
+#leftPanel .disabled:hover {
+    border: 1px solid black;
+}
+
+#leftPanel .disabled p {
+    color: gray;
+}
+
+#leftPanel .enabled {
+    border: 2px solid black;
+}
+
+#leftPanel .enabled:hover {
+    border: 3px solid yellow;
+}
+
+#leftPanel .enabled p {
+    color: white;
 }

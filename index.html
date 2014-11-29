@@ -9,13 +9,14 @@ and open the template in the editor.
         <title>CodeClicker</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="styles.css" type="text/css">
+        <link rel="stylesheet" href="stylesheets/styles.css" type="text/css">
+        <script type="text/javascript" src="javascripts/js.js"></script>
     </head>
     <body>
         <div id="leftPanel">
-            <div class="upgrade"><img src="ITStudent.png" id="lvl1"> <p>IT Student - "My favorite programming language its HTML !"</p></div>
-            <div class="upgrade"><img src="AdvancedDeveloper.png" id="lvl2"><p>Advanced Developer - He programmed some things in his life.</p></div>
-            <div class="upgrade"><img src="CrazyProgrammer.png" id="lvl3"><p>Crazy Programmer - We all have THAT friend.</p></div>
+            <div class="upgrade disabled" onClick="buy1();"><img src="images/ITStudent.png" id="lvl1"> <p id ="ug1Cost">IT Student - "My favorite programming language its HTML !"<br>Cost: 5 LC</p></div>
+            <div class="upgrade disabled"><img src="images/AdvancedDeveloper.png" id="lvl2"><p>Advanced Developer - He programmed some things in his life.<br>Cost: 25 LC</p></div>
+            <div class="upgrade disabled"><img src="images/CrazyProgrammer.png" id="lvl3"><p>Crazy Programmer - We all have THAT friend.<br>Cost: 100 LC</p></div>
         </div>
         
         <div id="CenterPanel">
@@ -23,9 +24,9 @@ and open the template in the editor.
         </div>
         
         <div id="rightPanel">
-            <img src="screen.png" />
-            <img src="keyboard.png" id="keyboard"/>
-            <p>Lines of Code : </p>
+            <img src="images/screen.png" />
+            <img src="images/keyboard.png" id="keyboard" onClick="clickKeyboard();"/>
+            <p id="score">Lines of Code : 0</p>
         </div>
         
     </body>
