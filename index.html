@@ -12,7 +12,7 @@ and open the template in the editor.
         <link rel="stylesheet" href="stylesheets/styles.css" type="text/css">
         <script type="text/javascript" src="javascripts/js.js"></script>
     </head>
-    <body>
+    <body onload="implementScore();">
         <div id="leftPanel">
             <div class="upgrade disabled" onClick="buy1();"><img src="images/ex.png" id="lvl1"> <p id ="ug1Cost">IT Student - "My favorite programming language its HTML !"<br>Cost: 5 LC</p></div>
             <div class="upgrade disabled" onClick="buy2();"><img src="images/ex2.png" id="lvl2"><p id="ug2Cost">Advanced Developer - He programmed some things in his life.<br>Cost: 25 LC</p></div>
@@ -27,7 +27,9 @@ and open the template in the editor.
         <div id="rightPanel">
             <img src="images/screen.png" />
             <img src="images/keyboard.png" id="keyboard" onClick="clickKeyboard();"/>
-            <p id="score">Lines of Code : 0</p>
+            <p id="score">Lines of Code : 0.0</p>
+            <p id="clickAmount">LC By Click : 1</p>
+            <p id="secondAmount">LC By Second : 0.2</p>
         </div>
         
     </body>

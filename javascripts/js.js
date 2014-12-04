@@ -1,6 +1,10 @@
 
+
 var score = 0;
-var multiplier = 1;
+var miliscore = 0 
+
+var lcByClick = 1;
+var lcBySecond = 0.2;
 
 var cost1 = 5;
 var cost2 = 25;
@@ -10,24 +14,22 @@ var cost4 = 60;
 function clickKeyboard(){
 	addScore();
 	scoreUpdate();
-
-	updateAll();
-
 }
 
 function addScore(){
-	score += multiplier;
+	score += lcByClick;
 }
 
 function scoreUpdate(){
 	document.getElementById("score").innerHTML = "Lines of Code : " + score;
+	updateAll();
 }
 
 
 function buy1(){
 	if(score >= cost1){
 		score -= cost1;
-		multiplier += 3;
+		lcBySecond += 0.5;
 		scoreUpdate();
 		cost1 *= 2;
 		document.getElementById("ug1Cost").innerHTML = "IT Student - \"My favorite programming language its HTML !\"<br>Cost: "+cost1+" LC";
@@ -39,7 +41,7 @@ function buy1(){
 function buy2(){
 	if(score >= cost2){
 		score -= cost2;
-		multiplier += 6;
+		lcByClick += 2;
 		scoreUpdate();
 		cost2 *= 2;
 		document.getElementById("ug2Cost").innerHTML = "Advanced Developer - He programmed some things in his life.<br>Cost: "+cost2+"LC";
@@ -51,7 +53,7 @@ function buy2(){
 function buy3(){
 	if(score >= cost3){
 		score -= cost3;
-		multiplier += 9;
+		lcByClick += 9;
 		scoreUpdate();
 		cost3 *= 3;
 		document.getElementById("ug3Cost").innerHTML = "Nerd - He read all the JQuery documentation.<br>Cost: "+cost3+"LC";
@@ -63,7 +65,7 @@ function buy3(){
 function buy4(){
 	if(score >= cost4){
 		score -= cost4;
-		multiplier += 12;
+		lcBySecond += 5;
 		scoreUpdate();
 		cost4 *= 4;
 		document.getElementById("ug4Cost").innerHTML = "Crazy Programmer - that crazy guy no one talks to.<br>Cost: "+cost4+"LC";
@@ -104,9 +106,44 @@ function updateLvl4(){
 	}
 }
 
+function updateClickAmount(){
+	document.getElementById("clickAmount").innerHTML = "LC By Click : " + lcByClick;
+}
+
+function updateSecondAmount(){
+	document.getElementById("secondAmount").innerHTML = "LC By Second : " + lcBySecond;
+}
+
+
 function updateAll(){
 	updateLvl1();
 	updateLvl2();
 	updateLvl3();
 	updateLvl4();
+	updateClickAmount();
+	updateSecondAmount();
 }
+
+//Score function
+
+function implementScore(){ 
+ if (miliscore>=10){ 
+    	miliscore=0 
+    	score+=1 
+    	scoreUpdate();
+    	setTimeout("implementScore()",500);
+ } else {
+ 		//if (lcBySecond >= 10) {
+ 		//	score+=(lcBySecond/10);
+ 		//	miliscore+=(lcBySecond%10);
+ 		//	scoreUpdate();
+ 		//	setTimeout("implementScore()",100);
+ 		//} else {
+    	//miliscore+=lcBySecond; 
+    	score+=lcBySecond;
+    	scoreUpdate();
+    	setTimeout("implementScore()",500);
+    	//} 
+} 
+}
+
