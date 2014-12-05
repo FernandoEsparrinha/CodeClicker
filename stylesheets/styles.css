@@ -21,10 +21,12 @@ body {
 }
 
 #rightPanel {
+    position: fixed;
+    right: 0;
+
     height: 100%;
     width: 20%;
     background-color: darkred;
-    float: right;
 }
 
 #rightPanel img {
@@ -42,14 +44,18 @@ body {
     
 }
 
-#keyboard:click {
+#keyboard:active  {
+    width: 140px;
+    height: 140px;
 }
 
 #leftPanel {
+    position: fixed;
+    left: 0;
+
     height: 100%;
     width: 20%;
     background-color: darkred;
-    float: left;
     padding-left: 10px;
     padding-right: 10px;
 }
@@ -90,9 +96,21 @@ body {
 }
 
 #leftPanel .enabled:hover {
-    border: 3px solid yellow;
+    border: 3px solid red;
 }
 
 #leftPanel .enabled p {
     color: white;
+}
+
+#CenterPanel {
+    position: fixed;
+
+    height: 100%;
+    width: 50%;
+    left: 25%;
+}
+
+#CenterPanel p {
+    margin-left: 50%;
 }

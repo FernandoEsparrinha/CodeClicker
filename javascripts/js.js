@@ -21,7 +21,7 @@ function addScore(){
 }
 
 function scoreUpdate(){
-	document.getElementById("score").innerHTML = "Lines of Code : " + score;
+	document.getElementById("score").innerHTML = "Lines of Code : " + Math.round(score*100)/100;
 	updateAll();
 }
 
@@ -131,7 +131,7 @@ function implementScore(){
     	miliscore=0 
     	score+=1 
     	scoreUpdate();
-    	setTimeout("implementScore()",500);
+    	setTimeout("implementScore()",1000);
  } else {
  		//if (lcBySecond >= 10) {
  		//	score+=(lcBySecond/10);
@@ -142,7 +142,7 @@ function implementScore(){
     	//miliscore+=lcBySecond; 
     	score+=lcBySecond;
     	scoreUpdate();
-    	setTimeout("implementScore()",500);
+    	setTimeout("implementScore()",1000);
     	//} 
 } 
 }
