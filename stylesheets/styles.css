@@ -77,29 +77,29 @@ body {
     float: right;
 }
 
-#leftPanel .disabled {
+.disabled {
 
     border: 2px solid #555555;
     background-color: #111111;
 }
 
-#leftPanel .disabled:hover {
+.disabled:hover {
     border: 1px solid black;
 }
 
-#leftPanel .disabled p {
+.disabled p {
     color: gray;
 }
 
-#leftPanel .enabled {
+.enabled {
     border: 2px solid black;
 }
 
-#leftPanel .enabled:hover {
+.enabled:hover {
     border: 3px solid red;
 }
 
-#leftPanel .enabled p {
+.enabled p {
     color: white;
 }
 
@@ -111,6 +111,23 @@ body {
     left: 25%;
 }
 
+.enabledI {
+    background-color: red;
+}
+.enabledI:hover {
+    border: 3px solid red;
+}
+.enabledI p {
+    color: white;
+}
+
 #CenterPanel p {
     margin-left: 50%;
 }
+
+#BottomCenter {
+    position: fixed;
+    float: bottom;
+    border: 1px solid black;
+}
+

@@ -11,6 +11,9 @@ var cost2 = 25;
 var cost3 = 30;
 var cost4 = 60;
 
+var costi1 = 5;
+var costi2 = 10;
+
 function clickKeyboard(){
 	addScore();
 	scoreUpdate();
@@ -41,7 +44,7 @@ function buy1(){
 function buy2(){
 	if(score >= cost2){
 		score -= cost2;
-		lcByClick += 2;
+		lcBySecond += 2;
 		scoreUpdate();
 		cost2 *= 2;
 		document.getElementById("ug2Cost").innerHTML = "Advanced Developer - He programmed some things in his life.<br>Cost: "+cost2+"LC";
@@ -53,7 +56,7 @@ function buy2(){
 function buy3(){
 	if(score >= cost3){
 		score -= cost3;
-		lcByClick += 9;
+		lcBySecond += 9;
 		scoreUpdate();
 		cost3 *= 3;
 		document.getElementById("ug3Cost").innerHTML = "Nerd - He read all the JQuery documentation.<br>Cost: "+cost3+"LC";
@@ -73,6 +76,26 @@ function buy4(){
 	} 
 	
 };
+
+function buyi1(){
+	if(score >= costi1){
+		score -= costi1;
+		lcByClick += 6;
+		scoreUpdate();
+		document.getElementsByClassName("item")[0].style.display = "none";
+		updateAll();
+	}
+}
+
+function buyi2(){
+	if(score >= costi2){
+		score -= costi2;
+		lcByClick += 15;
+		scoreUpdate();
+		document.getElementsByClassName("item")[1].style.display = "none";
+		updateAll();
+	}
+}
 
 function updateLvl1(){
 	if(score >= cost1){
@@ -106,6 +129,22 @@ function updateLvl4(){
 	}
 }
 
+function updateI1(){
+	if(score >= costi1){
+		document.getElementsByClassName("item")[0].className = "item enabledI";
+	} else {
+		document.getElementsByClassName("item")[0].className = "item disabled";
+	}
+}
+
+function updateI2(){
+	if(score >= costi2){
+		document.getElementsByClassName("item")[1].className = "item enabledI";
+	} else {
+		document.getElementsByClassName("item")[1].className = "item disabled";
+	}
+}
+
 function updateClickAmount(){
 	document.getElementById("clickAmount").innerHTML = "LC By Click : " + lcByClick;
 }
@@ -120,6 +159,8 @@ function updateAll(){
 	updateLvl2();
 	updateLvl3();
 	updateLvl4();
+	updateI1();
+	updateI2();
 	updateClickAmount();
 	updateSecondAmount();
 }
