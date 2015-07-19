@@ -4,7 +4,7 @@ app.controller("ProgrammerController", ["$scope","infoService", function($scope,
 		{
 			name: "IT Student",
 			info: "His favorite programming language is HTML.",
-			image: "resources/itStudent.png",
+			image: "resources/ITStudent.png",
 			cost: 5,
 			increase: 1
 		},
