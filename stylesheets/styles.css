@@ -1,133 +1,73 @@
-/*
-To change this license header, choose License Headers in Project Properties.
-To change this template file, choose Tools | Templates
-and open the template in the editor.
-*/
-/* 
-    Created on : 29/nov/2014, 11:19:39
-    Author     : Fernando
-*/
+/* COLORS */
 html {
-    height: 100%;
-    width: 100%;
-}
+  height: 100%; }
 
 body {
-    margin: 0;
-    padding: 0;
-    height: 100%;
-    width: 100%;
-    display: block;
-}
+  background-image: url("../resources/bd.png");
+  height: 100%;
+  padding: 5px;
+  color: #0e0; }
 
-#rightPanel {
-    position: fixed;
-    right: 0;
-
-    height: 100%;
-    width: 20%;
-    background-color: darkred;
-}
-
-#rightPanel img {
-    display:list-item;
-    margin-left: 30%;
-}
-
-#rightPanel p {
-    color: white;
-    margin-left: 30%;
-}
-
-#keyboard:hover {
-    cursor: pointer;  
-    
-}
-
-#keyboard:active  {
-    width: 140px;
-    height: 140px;
-}
-
-#leftPanel {
-    position: fixed;
-    left: 0;
-
-    height: 100%;
-    width: 20%;
-    background-color: darkred;
-    padding-left: 10px;
-    padding-right: 10px;
-}
-
-
-#leftPanel .upgrade {
+#programmersPanel {
+  background-color: rgba(0, 40, 0, 0.5);
+  height: 100%; }
+  #programmersPanel .programmer {
     padding: 2px;
     margin-top: 20px;
     margin-bottom: 20px;
     width: 90%;
     display: list-item;
-    list-style: none;
-}
-
-#leftPanel .upgrade p {
-    width: 150px;
-    margin-top: 10px;
-    margin-right: 20px;
-    float: right;
-}
+    list-style: none; }
+    #programmersPanel .programmer p {
+      width: 150px;
+      margin-top: 10px;
+      margin-right: 20px;
+      float: right; }
 
 .disabled {
-
-    border: 2px solid #555555;
-    background-color: #111111;
-}
-
-.disabled:hover {
-    border: 1px solid black;
-}
-
-.disabled p {
-    color: gray;
-}
+  border: 2px solid #555555;
+  background-color: #111111;
+  color: #555; }
 
 .enabled {
-    border: 2px solid black;
-}
+  border: 2px solid black; }
+  .enabled p {
+    color: white; }
 
 .enabled:hover {
-    border: 3px solid red;
-}
+  border: 3px solid red; }
 
-.enabled p {
-    color: white;
-}
+#mainPanel {
+  background-color: rgba(0, 40, 0, 0.5);
+  text-align: center;
+  height: 100%;
+  margin-right: 60px;
+  margin-left: 60px; }
 
-#CenterPanel {
-    position: fixed;
-
-    height: 100%;
-    width: 50%;
-    left: 25%;
-}
-
-.enabledI {
-    background-color: red;
-}
-.enabledI:hover {
-    border: 3px solid red;
-}
-.enabledI p {
-    color: white;
-}
-
-#CenterPanel p {
-    margin-left: 50%;
-}
+#mainPanel p {
+  margin-left: 50%; }
 
 #BottomCenter {
-    position: fixed;
-    float: bottom;
-    border: 1px solid black;
-}
+  border: 1px solid black; }
 
+#workstationPanel {
+  background-color: rgba(0, 40, 0, 0.5);
+  height: 100%; }
+
+#workstationPanel img {
+  display: list-item; }
+
+#workstationPanel p {
+  color: white;
+  margin-left: 30%; }
+
+#keyboard:hover {
+  cursor: pointer; }
+
+#keyboard:active {
+  border: 2px solid black; }
+
+#screen {
+  width: 250px; }
+
+/*# sourceMappingURL=styles.css.map */

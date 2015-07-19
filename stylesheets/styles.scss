@@ -1,0 +1,100 @@
+/* COLORS */
+$primaryBackground: rgba(0,40,0,0.5);
+$fontEnabledColor: #0e0;
+$fontDisabledColor: #555;
+
+html {
+    height: 100%;
+}
+
+body {
+    background-image: url("../resources/bd.png");
+    height: 100%;
+    padding: 5px; 
+    color: $fontEnabledColor;
+}
+
+
+#programmersPanel {
+    background-color: $primaryBackground;
+    height: 100%;
+
+    .programmer {
+        padding: 2px;
+        margin-top: 20px;
+        margin-bottom: 20px;
+        width: 90%;
+        display: list-item;
+        list-style: none;
+
+        p {
+            width: 150px;
+            margin-top: 10px;
+            margin-right: 20px;
+            float: right;
+        }
+
+    }
+}
+
+.disabled {
+    border: 2px solid #555555;
+    background-color: #111111;
+    color: $fontDisabledColor;
+
+}
+
+
+.enabled {
+    border: 2px solid black;
+
+    p {
+        color: white;
+    }
+}
+
+.enabled:hover {
+    border: 3px solid red;
+}
+
+#mainPanel {
+    background-color: $primaryBackground;
+    text-align: center;
+    height: 100%;
+    margin-right: 60px; 
+    margin-left: 60px;
+}
+
+#mainPanel p {
+    margin-left: 50%;
+}
+
+#BottomCenter {
+    border: 1px solid black;
+}
+
+#workstationPanel {
+    background-color: $primaryBackground;
+    height: 100%;
+}
+
+#workstationPanel img {
+    display:list-item;
+}
+
+#workstationPanel p {
+    color: white;
+    margin-left: 30%;
+}
+
+#keyboard:hover {
+    cursor: pointer;      
+}
+
+#keyboard:active {
+    border: 2px solid black;
+}
+
+#screen {
+    width: 250px;
+}

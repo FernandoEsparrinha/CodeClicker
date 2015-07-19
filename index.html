@@ -9,33 +9,72 @@ and open the template in the editor.
         <title>CodeClicker</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="stylesheets/styles.css" type="text/css">
-        <script type="text/javascript" src="javascripts/js.js"></script>
-    </head>
-    <body onload="implementScore();">
-        <div id="leftPanel">
-            <div class="upgrade disabled" onClick="buy1();"><img src="images/ex.png" id="lvl1"> <p id ="ug1Cost">IT Student - "My favorite programming language its HTML !"<br>Cost: 5 LC</p></div>
-            <div class="upgrade disabled" onClick="buy2();"><img src="images/ex2.png" id="lvl2"><p id="ug2Cost">Advanced Developer - He programmed some things in his life.<br>Cost: 25 LC</p></div>
-            <div class="upgrade disabled" onClick="buy3();"><img src="images/ex3.png" id="lvl3"><p id="ug3Cost">Nerd - He read all the JQuery documentation.<br>Cost: 30 LC</p></div>
-            <div class="upgrade disabled" onClick="buy4();"><img src="images/ex4.png" id="lvl3"><p id="ug4Cost">Crazy Programmer - that crazy guy no one talks to.<br>Cost: 60 LC</p></div>
-        </div>
-        
-        <div id="CenterPanel">
-            <p id="score">Lines of Code : 0.0</p>
-            <p id="clickAmount">LC By Click : 1</p>
-            <p id="secondAmount">LC By Second : 0.2</p>
 
-            <div id="BottomCenter">
-                <div class ="item disabled" onclick="buyi1();"><p>LCD Cost: 5LC</p></div>
-                <div class ="item disabled" onclick="buyi2();"><p>Mechanical Keyboard Cost: 10LC</p></div>
+        <!--JQUERY-->
+        <script src="https://code.jquery.com/jquery-1.11.2.min.js"></script>
+        
+        <!-- BOOTSTRAP -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+
+        <!--ANGULAR JS-->
+        <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.3/angular.min.js"></script>
+
+
+        <!-- CSS -->
+        <link rel="stylesheet" href="stylesheets/styles.css" type="text/css">
+
+
+    </head>
+    <body ng-app="CodeClicker" >
+        <div ng-controller="MainController" data-ng-init="update()" style="height:100%;">
+            <div class="col-md-3" id="programmersPanel" ng-controller="ProgrammerController">
+                <div class="programmer disabled" ng-repeat="programmer in programmers">
+                    <img src={{programmer.image}} ng-click="buy(programmer);update()"> 
+                    <p> 
+                        {{programmer.name}} - {{programmer.info}}
+                        <br>
+                        Cost: {{programmer.cost | number:0}} LC
+                        <br>
+                        Work: {{programmer.increase}} LC by Second
+                    </p>
+                </div>
+            </div>
+            
+            <div class="col-md-6" id="mainPanel">
+                <span>Lines of Code : {{LC | number:0}}</span>
+                <br>
+                <span>LC By Click : {{LCbyClick | number:0}}</span>
+                <br>
+                <span>LC By Second : {{LCbySecond | number:0}}</span>
+                <br>
+                <br>
+
+                <div id="BottomCenter"  ng-controller="UpgradeController">
+                    <div class="upgrade disabled" ng-repeat="upgrade in upgrades | orderBy: 'cost'" ng-click="buy(upgrade)">
+                        <span>{{upgrade.name}} - {{upgrade.cost}} LC</span>
+                        <br>
+                        <span>{{upgrade.info}}</span>
+                        <br>
+                        <span>{{upgrade.effect}}</span>
+                    </div>
+                    
+                </div>
+            </div>
+            
+            <div class="col-md-2" id="workstationPanel">
+                <img src="resources/CRT_windows.png" id="screen"/>
+                <img src="resources/keyboard.png" id="keyboard" ng-click="click()" />
             </div>
         </div>
+        <!-- MODULES -->
+        <script src="javascripts/app.js"></script>
         
-        <div id="rightPanel">
-            <img src="images/screen.png" />
-            <img src="images/keyboard.png" id="keyboard" onClick="clickKeyboard();"/>
-            
-        </div>
-        
+        <!-- CONTROLLERS -->
+        <script src="javascripts/controllers/MainController.js"></script>
+        <script src="javascripts/controllers/ProgrammerController.js"></script>
+        <script src="javascripts/controllers/UpgradeController.js"></script>
+
     </body>
 </html>
